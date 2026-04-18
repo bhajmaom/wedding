@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversary | Bhaiya & Bhabhi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+ <div id="flower-container"></div>
+
+    <audio id="bg-music" loop src="audio/background-music.mp3"></audio>
+    <button id="music-control" onclick="toggleMusic()">🎵 Play Music</button>
+
+    <div id="surprise-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img src="images/surprise-photo.jpg" alt="Surprise Photo">
+            <h2>Happy Anniversary Bhaiya & Bhabhi! ❤️</h2>
+        </div>
+    </div>
+
+    <section id="hero">
+        <div class="container">
+            <h1 class="reveal-zoom">Happy Anniversary<br>Bhaiya & Bhabhi</h1>
+            <p class="hero-sub reveal">Celebrating another beautiful year together</p>
+            
+            <div class="countdown-container reveal">
+                <div class="time-box"><span id="days">00</span><p>Days</p></div>
+                <div class="time-box"><span id="hours">00</span><p>Hours</p></div>
+                <div class="time-box"><span id="minutes">00</span><p>Mins</p></div>
+                <div class="time-box"><span id="seconds">00</span><p>Secs</p></div>
+            </div>
+
+            <a href="#gallery" class="btn-start">Start the Journey</a>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title reveal">Captured Memories</h2>
+            <div class="grid">
+                <div class="photo-card reveal"><img src="images/photo1.png" alt="Memory 1"></div>
+                <div class="photo-card reveal"><img src="images/photo2.png" alt="Memory 2"></div>
+                <div class="photo-card reveal"><img src="images/photo3.png" alt="Memory 3"></div>
+               
+                 <div class="photo-card reveal"><img src="images/photo4.png" alt="Memory 4"></div>
+                  <div class="photo-card reveal"><img src="images/photo5.png" alt="Memory 5"></div>
+                   <div class="photo-card reveal"><img src="images/photo6.png" alt="Memory 6"></div>
+                    <div class="photo-card reveal"><img src="images/photo7.png" alt="Memory 7"></div>
+                     <div class="photo-card reveal"><img src="images/photo8.png" alt="Memory 8"></div>
+                      <div class="photo-card reveal"><img src="images/photo9.png" alt="Memory 9"></div>
+                       <div class="photo-card reveal"><img src="images/photo10.png" alt="Memory 10"></div>
+                        <div class="photo-card reveal"><img src="images/photo11.png" alt="Memory 11"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="video-memories">
+        <div class="container">
+            <h2 class="section-title reveal">A Special Video for You</h2>
+            <div class="video-container reveal">
+                <video controls poster="images/video-thumbnail.png">
+                    <source src="videos/anniversary-video.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline">
+        <div class="container">
+            <h2 class="section-title reveal">Our Story So Far</h2>
+            <div class="timeline-container">
+                <div class="timeline-item reveal">
+                    <h3>The First Meeting</h3>
+                    <p>The moment that started it all...</p>
+                </div>
+                <div class="timeline-item reveal">
+                    <h3>The Wedding Day</h3>
+                    <p>Two families became one in a celebration of love.</p>
+                </div>
+                <div class="timeline-item reveal">
+                    <h3>Infinite Memories</h3>
+                    <p>Every year since has been a gift to our family.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="message">
+        <div class="container">
+            <div class="message-box reveal">
+                <p>"Bhaiya, you are my hero. Bhabhi, you are the heart of this home. Watching you two together is pure joy."</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="surprise-section">
+        <div class="container">
+            <button class="btn-surprise reveal" onclick="triggerCelebration()">The Big Surprise! ✨</button>
+        </div>
+    </section>
+
+    <footer>
+        <h2 class="reveal">May your love grow stronger every year</h2>
+        <p>Created with ❤️ by your Brothers</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

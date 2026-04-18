@@ -1,0 +1,126 @@
+:root {
+    --soft-pink: #fff0f3;
+    --rose-red: #ff4d6d;
+    --deep-crimson: #c9184a;
+    --text-dark: #590d22;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--soft-pink);
+    color: var(--text-dark);
+    text-align: center; /* Centers all text by default */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers block elements like video/images */
+}
+
+/* --- Music Button --- */
+#music-control {
+    position: fixed; top: 20px; right: 20px; z-index: 1000;
+    padding: 10px 20px; border-radius: 30px; border: none;
+    background: white; color: var(--deep-crimson); font-weight: bold;
+    cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* --- Countdown --- */
+.countdown-container {
+    display: flex; gap: 15px; margin: 30px 0; justify-content: center;
+}
+.time-box {
+    background: white; padding: 15px; border-radius: 10px; min-width: 80px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.time-box span { font-size: 2rem; font-weight: bold; color: var(--deep-crimson); display: block; }
+
+/* --- Reveal Animations --- */
+.reveal, .reveal-zoom { opacity: 0; transition: all 1.2s ease; }
+.reveal { transform: translateY(30px); }
+.reveal-zoom { transform: scale(0.9); }
+.active { opacity: 1; transform: translateY(0) scale(1); }
+
+/* --- Sections --- */
+section { padding: 100px 0; width: 100%; }
+#hero {
+    height: 100vh;
+    background: linear-gradient(rgba(255,240,243,0.6), rgba(255,240,243,0.6)), url('images/hero-bg.jpg') center/cover;
+    display: flex; align-items: center; justify-content: center;
+}
+
+#hero h1 { font-family: 'Dancing Script', cursive; font-size: clamp(2.5rem, 8vw, 5rem); color: var(--deep-crimson); }
+
+.btn-start {
+    padding: 15px 40px; margin-top: 20px; background: var(--rose-red); color: white;
+    text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s;
+}
+
+/* --- Gallery & Video --- */
+.grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; width: 100%; margin-top: 30px;
+}
+.photo-card { height: 350px; border-radius: 15px; overflow: hidden; border: 5px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+.photo-card img { width: 100%; height: 100%; object-fit: cover; }
+
+.video-container { width: 100%; max-width: 800px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+video { width: 100%; display: block; }
+
+/* --- Timeline --- */
+.timeline-container { max-width: 600px; text-align: center; }
+.timeline-item {
+    padding: 20px; border-bottom: 1px solid var(--rose-red); margin-bottom: 20px;
+}
+.timeline-item h3 { font-family: 'Playfair Display', serif; color: var(--deep-crimson); margin-bottom: 10px; }
+
+/* --- Message & Surprise --- */
+.message-box {
+    font-family: 'Playfair Display', serif; font-size: 1.5rem; font-style: italic;
+    line-height: 1.6; padding: 40px; background: white; border-radius: 20px;
+}
+.btn-surprise {
+    padding: 20px 50px; background: var(--deep-crimson); color: white; border: none;
+    border-radius: 50px; font-family: 'Dancing Script', cursive; font-size: 1.8rem; cursor: pointer;
+}
+
+/* --- Modal --- */
+.modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; }
+.modal-content { background: white; padding: 20px; border-radius: 20px; max-width: 450px; position: relative; }
+.modal-content img { width: 100%; border-radius: 10px; }
+.close-btn { position: absolute; top: 10px; right: 20px; font-size: 30px; cursor: pointer; }
+
+footer { background: var(--deep-crimson); color: white; padding: 60px 0; width: 100%; }
+
+
+/* --- MOVING FLOWERS BACKGROUND --- */
+#flower-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: -1; /* Ye background ke peeche rahega */
+    overflow: hidden;
+}
+
+.moving-flower {
+    position: absolute;
+    bottom: -50px;
+    font-size: 25px;
+    opacity: 0.6;
+    animation: floatUp 10s linear infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    20% { opacity: 0.6; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
